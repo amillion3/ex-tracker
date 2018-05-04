@@ -1,6 +1,7 @@
 // Error and success functions for AJAX call
 const loadExData = require('./ex');
 const dom = require ('./dom');
+const loadLocations = require('./locations');
 
 const successLoadEx = data => {
   $('#ex-photo').append(dom.printExPhoto(data.ex));

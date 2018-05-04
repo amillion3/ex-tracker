@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Ex-Tracker</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy|Open+Sans" rel="stylesheet">
   <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
@@ -19,14 +20,16 @@
 
 
       <div class = 'col-sm-3 text-center'>
-        <img draggable="false" class='test img-responsive' src='https://cdn.dribbble.com/users/19849/screenshots/197248/mcdonalds_sign.png'>
+        <img draggable="false" class='img-loc-fixed img-responsive' src='https://cdn.dribbble.com/users/19849/screenshots/197248/mcdonalds_sign.png'>
         <button class="btn btn-location btn-block collapse-fixed" type="button" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">
             Details
         </button>
         <div class="collapse collapse-fixed-content" id="collapseExample1">
-          <p class='test-text1'>McDonald's</p>
-          <p class='test-text2'>1234 Main St</p>
-          <p class='test-text3'>Nighttime</p>
+          <div class='expanded-container'>
+            <p class='text-loc-name'>McDonald's</p>
+            <p class='text-loc-address'>1234 Main St</p>
+            <p class='text-loc-timing'>Nighttime</p>
+          </div>
         </div>
       </div>
 
