@@ -3,5 +3,47 @@ div {
 }
 
 img {
-  max-width: 100px;
+  max-width: 200px;
+  margin-top: 20px;
+  user-select: none;
+}
+
+.collapse-fixed {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.collapse-fixed-content {
+  position: absolute;
+  top: 30px;
+  left: 0px;
+}
+
+.collapsing {
+  color: none;
+  border: none;
+  background-color: none;
+}
+
+.test {
+  position: relative;
+}
+
+.test-text1 {
+  position: absolute;
+  top: 10px;
+  left: 50px;
+}
+
+.test-text2 {
+  position: absolute;
+  top: 30px;
+  left: 50px;
+}
+
+.test-text3 {
+  position: absolute;
+  top: 50px;
+  left: 50px;
 }

@@ -2,9 +2,13 @@
 const loadExData = require('./ex');
 const dom = require ('./dom');
 
-const successLoadEx = (data) => {
+const successLoadEx = data => {
   $('#ex-photo').append(dom.printExPhoto(data.ex));
   $('#ex-details').append(dom.printExDetails(data.ex));
+};
+
+const successLoadLocations = data => {
+  $('cards-container').append(dom.printLocations(data.locations));
 };
 
 const fail = () => {
@@ -13,6 +17,7 @@ const fail = () => {
 
 const initializer = () => {
   loadExData(successLoadEx, fail);
+  loadLocations(successLoadLocations, fail);
 };
 
 module.exports = initializer;

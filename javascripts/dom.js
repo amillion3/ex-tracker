@@ -1,5 +1,6 @@
 // Writing to the dom
 
+// Begin Print Ex Stuff
 const flaws = input => {
   let flawsOutput = '';
   const flawsArray = input[0].flaws;
@@ -8,12 +9,10 @@ const flaws = input => {
   });
   return flawsOutput.slice(0, -2); // removes trailing comma and space
 };
-
 const printExPhoto = input => {
   const output = `<img class='img-ex' src='${input[0].imageUrl}' alt='My ex, Ann Veal'>`;
   return output;
 };
-
 const printExDetails = input => {
   const flawsDom = flaws(input);
   const output = `
@@ -22,8 +21,20 @@ const printExDetails = input => {
   <p>Flaws: ${flawsDom}</p>`;
   return output;
 };
+// End Print Ex Stuff
+// Begin Print Location Stuff
+const printLocations = input => {
+  let output = '';
+  input.locations.forEach(location => {
+    output += `
+
+    `;
+  });
+};
+// End Print Location Stuff
 
 module.exports = {
   printExPhoto,
   printExDetails,
+  printLocations,
 };
