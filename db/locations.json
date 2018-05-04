@@ -1,0 +1,88 @@
+{
+  "locations": [
+    {
+      "name": "Wendy's",
+      "address": "2603 West End Ave, Nashville, TN 37203",
+      "timeOfDay": "After Dark",
+      "imageUrl": "https://wnxvq1xxnyh3nwmdu3caf4yg-wpengine.netdna-ssl.com/wp-content/uploads/2013/06/wendys-new-logo-sm-400x300.jpg"
+    },
+    {
+      "name": "McDonald's",
+      "address": "2212 Nolensville Pike, Nashville, TN 37211",
+      "timeOfDay": "Afternoon",
+      "imageUrl": "https://cdn.dribbble.com/users/19849/screenshots/197248/mcdonalds_sign.png"
+    },
+    {
+      "name": "Burger King",
+      "address": "454 Murfreesboro Pike, Nashville, TN 37210",
+      "timeOfDay": "Morning",
+      "imageUrl": "https://cdn.dribbble.com/users/181873/screenshots/1784724/honestslogans_burgerking_dribbble_1x.jpg"
+    },
+    {
+      "name": "Chic-Fil-A",
+      "address": "6500 Charlotte Pike, Nashville, TN 37209",
+      "timeOfDay": "Morning",
+      "imageUrl": "https://cdn.dribbble.com/users/61834/screenshots/4283183/cfa_1x.png"
+    },
+    {
+      "name": "KFC",
+      "address": "1027 8th Ave N, Nashville, TN 37208",
+      "timeOfDay": "Afternoon",
+      "imageUrl": "https://doingbusinessinindonesia.files.wordpress.com/2013/08/finger-lickin.jpg"
+    },
+    {
+      "name": "Taco Bell",
+      "address": "2101 Rosa L Parks Blvd, Nashville, TN 37228",
+      "timeOfDay": "After Dark",
+      "imageUrl": "https://cdn.dribbble.com/users/181873/screenshots/1759144/honestslogans_tacobell_dribbble.png"
+    },
+    {
+      "name": "Pizza Hut",
+      "address": "1908 West End Ave, Nashville, TN 37203",
+      "timeOfDay": "Evening",
+      "imageUrl": "http://2.bp.blogspot.com/-qDJFCOj4c0w/ULWGxN50W_I/AAAAAAAAEPk/RDK43o5a1Sg/s400/TMNT_PIZZA+HUT+AD-VHS+TAPE_4.jpg"
+    },
+    {
+      "name": "Subway",
+      "address": "353 Murfreesboro Pike, Nashville, TN 37210",
+      "timeOfDay": "Morning",
+      "imageUrl": "http://www.whitneytowncentre.com/wp-content/uploads/2017/10/subway.png"
+    },
+    {
+      "name": "Jimmy John's",
+      "address": "424 Church St #102, Nashville, TN 37219",
+      "timeOfDay": "Afternoon",
+      "imageUrl": "http://humanebroward.com/wp-content/uploads/2017/02/jimmy-johns-400x300.jpg"
+    },
+    {
+      "name": "Waffle House",
+      "address": "816 Murfreesboro Pike, Nashville, TN 37217",
+      "timeOfDay": "After Dark",
+      "imageUrl": "https://i.pinimg.com/originals/37/db/a7/37dba7417bfcd5b825763a31d3a225d8.jpg"
+    },
+    {
+      "name": "Bojangles",
+      "address": "7000 A Charlotte Pike, Nashville, TN 37209",
+      "timeOfDay": "Evening",
+      "imageUrl": "http://attentionhome.org/wp-content/uploads/2015/11/BoOvalLogo-400x300.jpg"
+    },
+    {
+      "name": "Hardees",
+      "address": "1000 Acorn Dr, Nashville, TN 37210",
+      "timeOfDay": "Morning",
+      "imageUrl": "https://burgerbeast.com/wp-content/uploads/2009/02/HardeesSignage.jpg"
+    },
+    {
+      "name": "Sonic",
+      "address": "444 Murfreesboro Pike, Nashville, TN 37210",
+      "timeOfDay": "Afternoon",
+      "imageUrl": "http://www.savingsecrets.com/wp-content/uploads/2015/06/Win-a-Free-Drink-at-Sonic-Drive-In-through-Its-Guest-Satisfaction-Survey-400x300.jpg"
+    },
+    {
+      "name": "Fazoli's",
+      "address": "10 Harding Mall Dr, Nashville, TN 37211",
+      "timeOfDay": "After Dark",
+      "imageUrl": "https://s-media-cache-ak0.pinimg.com/originals/fb/7d/0e/fb7d0eea596d06fb8f28754d64c6fa81.jpg"
+    }
+  ]
+}
