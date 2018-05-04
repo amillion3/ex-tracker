@@ -1,3 +1,7 @@
 div {
   border: .5px solid gray;
 }
+
+img {
+  max-width: 100px;
+}
