@@ -1,11 +1,43 @@
+/* http://paletton.com/palette.php?uid=7000u0kmCCeddPViHIdqRwtv8pR */
+
+body {
+  background-color: #8BED8B;
+}
+
 div {
   border: .5px solid gray;
 }
 
 img {
-  max-width: 200px;
-  margin-top: 20px;
+  /* max-width: 200px; */
+  margin-top: 33px;
   user-select: none;
+}
+
+.btn {
+  border-radius: 0px;
+  color: white;
+  font-size: 18px;
+}
+.btn:hover{
+  color: white;
+}
+.btn-location {
+  background-color: #FF8A29;
+  border-bottom: 3px solid #CE6106;
+}
+.btn-location:hover {
+  background-color: #CE6106;
+  border-bottom: 3px solid #FF8A29;
+}
+
+.btn-timing {
+  background-color: #FF4B4B;
+  border-bottom: 3px solid #CE0606;
+}
+.btn-timing:hover {
+  background-color: #CE0606;
+  border-bottom: 3px solid #FF4B4B;
 }
 
 .collapse-fixed {
