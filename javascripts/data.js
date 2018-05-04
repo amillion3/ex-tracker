@@ -9,7 +9,7 @@ const successLoadEx = data => {
 };
 
 const successLoadLocations = data => {
-  $('cards-container').append(dom.printLocations(data.locations));
+  $('#cards-container').append(dom.printLocations(data.locations));
 };
 
 const fail = () => {

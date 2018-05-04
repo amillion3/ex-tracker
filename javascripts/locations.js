@@ -1,7 +1,9 @@
 // AJAX call for locations.json
 
-const loadLocations = () => {
-
+const loadLocations = (successFunction, failureFunction) => {
+  $.get('../db/locations.json')
+    .done(successFunction)
+    .fail(failureFunction);
 };
 
 module.exports = loadLocations;
