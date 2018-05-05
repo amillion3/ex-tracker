@@ -1,16 +1,14 @@
-/* http://paletton.com/palette.php?uid=7000u0kmCCeddPViHIdqRwtv8pR */
+/* http://paletton.com/palette.php?uid=33N0H0kdspUcRugd1s1dGobdGmI */
 /* font-family: 'Luckiest Guy', cursive;
 font-family: 'Open Sans', sans-serif; */
 
 body {
-  background-color: #8BED8B;
+  background-color: #CE9478;
   box-sizing: border-box;
+  margin-top: 20px;
+  margin-bottom: 105px;
+  overflow-x: hidden;
 }
-
-div {
-  /* border: .5px solid gray; */
-}
-
 h1, h2, h3 {
   font-family: 'Luckiest Guy', cursive;
 }
@@ -18,90 +16,105 @@ h4,h5,h6,p,a,input,button,label {
   font-family: 'Open Sans', sans-serif;
 }
 h1 {
-  font-size: 54px;
+  font-size: 60px;
+}
+h3, h4, h5, h6, a, input, label {
+  color: black
 }
 img {
-  /* max-width: 200px; */
-  margin-top: 33px;
   user-select: none;
-  border: 5px solid white;
+  border: 5px solid black;
 }
-
-.btn {
+input {
+  font-size: 20px;
+}
+.col-sm-3 {
+  min-height: 200px;
+}
+/* Top Title/Header */
+.img-ex {
+  width: 100%;
+}
+.ex-header {
+  margin-bottom: 20px;
+}
+/* END Top Title/Header */
+.button {
   border-radius: 0px;
   color: white;
   font-size: 18px;
-  z-index: 999;
+  margin: 0 0 10px 0;
+  padding: 5px 20px 5px 20px;
+  border: none;
 }
-.btn:focus{
+.button:focus{
   outline: none;
 }
+.button:active,
+.button:visited {
+  color: white;
+}
+.button {
+  color: white;
+}
+
+/* Button filter/searching */
 .btn-location {
-  background-color: #FF8A29;
-  border-bottom: 3px solid #CE6106;
+  background-color: #57658B;
+  border-bottom: 3px solid #505E82;
   color: white;
 }
 .btn-location:hover {
-  background-color: #CE6106;
-  border-bottom: 3px solid #FF8A29;
+  background-color: #505E82;
+  border-bottom: 3px solid #57658B;
   color: white;
 }
-
+.btn-location:active {
+  color: white;
+}
 .btn-timing {
-  background-color: #FF4B4B;
-  border-bottom: 3px solid #CE0606;
+  background-color: #CEC778;
+  border-bottom: 3px solid #C1BA6E;
   color: white;
 }
 .btn-timing:hover {
-  background-color: #CE0606;
-  border-bottom: 3px solid #FF4B4B;
+  background-color: #C1BA6E;
+  border-bottom: 3px solid #CEC778;
   color: white;
 }
-
-.collapse-fixed {
-  position: absolute;
-  top: 0px;
-  left: 0px;
+.btn-search {
+  background-color: #CEC778;
+  border-bottom: 3px solid #C1BA6E;
+  color: white;
+  margin-bottom: 6px;
 }
-
-.collapse-fixed-content {
-  position: absolute;
-  top: 30px;
-  left: 0px;
+.btn-search:hover {
+  background-color: #C1BA6E;
+  border-bottom: 3px solid #CEC778;
+  color: white;
 }
-
-.collapsing {
-  color: none;
-  border: none;
-  background-color: none;
+.navbar-fixed-bottom {
+  background: linear-gradient(#CE9478, #c07653);
+  padding-bottom: 15px;
 }
+/* END Button filter/searching */
 
-
-.expanded-container {
-  background-color: rgba(255,255,255,.6);
-  width: 24.8vw;
-  height: 225px;
+/* Location cards */
+.btn-location {
+  background-color: #57658B;
+  border-bottom: 5px solid #505E82;
+  color: white;
+  box-shadow: 0px 17px 10px -10px rgba(0,0,0,0.4);
 }
-
-.col-sm-3 {
-  min-height: 250px;
+.btn-location:hover {
+  background-color: #505E82;
+  border-bottom: 5px solid #57658B;
+  color: white;
 }
-
+.location {
+  padding: 0 15px 30px 15px;
+}
 .img-loc-fixed {
-  position: relative;
+  box-shadow: 0px 17px 10px -10px rgba(0,0,0,0.4);
 }
-.text-loc-name {
-  position: absolute;
-  top: 15%;
-  left: 20%;
-}
-.text-loc-address {
-  position: absolute;
-  top: 40%;
-  left: 20%;
-}
-.text-loc-timing {
-  position: absolute;
-  top: 65%;
-  left: 20%;
-}
+/* END Location cards */

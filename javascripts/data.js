@@ -13,6 +13,7 @@ const successLoadEx = data => {
 const successLoadLocations = data => {
   dataGateKeeper.setAllLocations(data.locations);
   $('#cards-container').append(dom.printLocations(dataGateKeeper.returnAllLocations()));
+  $('[data-toggle="popover"]').popover();
 };
 
 const fail = () => {
