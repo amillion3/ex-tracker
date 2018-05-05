@@ -1,5 +1,15 @@
 // Attaching all event listeners
 const dataGateKeeper = require('./dataGatekeeper');
+const dom = require ('./dom');
+
+const printMatches = matches => {
+  $('#cards-container').append(dom.printLocations(matches));
+};
+
+const clearDomOfCards = matches => {
+  $('#cards-container').html('');
+  printMatches(matches);
+};
 
 const findSearchMatches = outputArray => {
   const allLocations = dataGateKeeper.returnAllLocations();
@@ -17,10 +27,11 @@ const findSearchMatches = outputArray => {
     });
   });
   if (matchingLocations.length > 0) {
-    console.log([ ...new Set(matchingLocations),]);
-    return [ ...new Set(matchingLocations),];
+    // console.log([ ...new Set(matchingLocations),]);
+    clearDomOfCards([ ...new Set(matchingLocations),]);
+    // return [ ...new Set(matchingLocations),];
   } else {
-    console.log('no matches');
+    console.error('no matches');
   }
 };
 
