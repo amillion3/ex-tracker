@@ -25,7 +25,6 @@ const printExDetails = input => {
 // Begin Print Location Stuff
 const printLocations = input => {
   let output = '';
-  console.log(input);
   input.forEach(location => {
     const displayLocation = (location.address.split(',', 1));
     output += `
