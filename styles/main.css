@@ -5,7 +5,7 @@ font-family: 'Open Sans', sans-serif; */
 body {
   background-color: #CE9478;
   box-sizing: border-box;
-  margin-bottom: 85px;
+  margin-bottom: 105px;
   overflow-x: hidden;
 }
 h1, h2, h3 {
@@ -19,7 +19,6 @@ h1 {
 }
 img {
   /* max-width: 200px; */
-  margin-top: 33px;
   user-select: none;
   border: 5px solid black;
 }
@@ -27,9 +26,7 @@ input {
   font-size: 20px;
 }
 .col-sm-3 {
-  min-height: 250px;
-
-  padding: 0;
+  min-height: 200px;
 }
 /* Top Title/Header */
 .title {
@@ -46,7 +43,7 @@ input {
   border-radius: 0px;
   color: white;
   font-size: 18px;
-  z-index: 999;
+  margin: 0 0 10px 0;
 }
 .btn:focus{
   outline: none;
@@ -83,70 +80,27 @@ input {
   color: white;
 }
 .navbar-fixed-bottom {
-  background-color: #CE9478;
+  background: linear-gradient(#CE9478, #c07653);
   padding-bottom: 15px;
 }
 /* END Button filter/searching */
 
-/* Collapse styling */
-.collapse-fixed {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-}
-.collapse-fixed-content {
-  position: absolute;
-  top: 30px;
-  left: 9px;
-  overflow: hidden;
-}
-.collapsing {
-  color: none;
-  border: none;
-  background-color: none;
-}
-.expanded-container {
-  background-color: rgba(255,255,255,.6);
-  /* width: 24.8vw;
-  height: 225px; */
-  width: 60vw;
-  max-width: 23vw;
-  /* margin-right: 13%;
-  margin-left: 13%; */
-  height: 200px;
-  /* overflow: hidden; */
-  /* position: relative; */
-  /* left: 0;
-  right: 0;
-  width: inherit; */
-}
-/* END Collapse styling */
-
 /* Location cards */
+.btn-location {
+  background-color: #57658B;
+  border-bottom: 5px solid #505E82;
+  color: white;
+  box-shadow: 0px 17px 10px -10px rgba(0,0,0,0.4);
+}
+.btn-location:hover {
+  background-color: #505E82;
+  border-bottom: 5px solid #57658B;
+  color: white;
+}
+.location {
+  padding: 0 15px 30px 15px;
+}
 .img-loc-fixed {
-  position: relative;
+  box-shadow: 0px 17px 10px -10px rgba(0,0,0,0.4);
 }
-.text-loc-name {
-  position: absolute;
-  top: 15%;
-  left: 20%;
-}
-.text-loc-address {
-  position: absolute;
-  top: 40%;
-  left: 20%;
-}
-.text-loc-timing {
-  position: absolute;
-  top: 65%;
-  left: 20%;
-}
-.btn-block {
-  width: 94%;
-  margin-right: 3%;
-  margin-left: 3%;
-}
-#cards-container {
-  margin: 0px 10px 10px 10px;
-}
-/* Location cards */
+/* END Location cards */

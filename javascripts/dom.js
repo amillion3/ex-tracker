@@ -27,20 +27,15 @@ const printLocations = input => {
   let output = '';
   input.forEach(location => {
     const displayLocation = (location.address.split(',', 1));
+    const mapUrl = `https://www.google.com/maps/place/${location.address}`;
     output += `
-    <div class='col-sm-3 text-center'>
-      <img draggable="false" class='img-loc-fixed img-responsive' src='${location.imageUrl}'>
-      <button class="btn btn-location btn-block collapse-fixed" type="button" data-toggle="collapse" data-target="#loc-${location.id}" aria-expanded="false" aria-controls="loc-${location.id}">
-          Details
-      </button>
-    <div class="collapse collapse-fixed-content" id="loc-${location.id}">
-      <div class='expanded-container'>
-        <p class='text-loc-name'>${location.name}</p>
-        <p class='text-loc-address'>${displayLocation}</p>
-        <p class='text-loc-timing'>${location.timeOfDay}</p>
-      </div>
-    </div>
-  </div>`;
+      <div class='col-sm-3 text-center location'>
+        <button type="button" class="btn btn-location" data-container="body" data-toggle="popover" data-html="true" data-placement="bottom"
+          data-content="${location.name}<br/>${displayLocation}<br/><a href='${mapUrl}' target='_blank' alt='Location'>Google Maps</a>">
+              Details
+        </button>
+        <img draggable="false" class='img-loc-fixed img-responsive' src='${location.imageUrl}'>
+      </div>`;
   });
   return output;
 };
