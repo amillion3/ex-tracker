@@ -6,6 +6,7 @@ body {
   background-color: #CE9478;
   box-sizing: border-box;
   margin-bottom: 85px;
+  overflow-x: hidden;
 }
 h1, h2, h3 {
   font-family: 'Luckiest Guy', cursive;
@@ -27,6 +28,8 @@ input {
 }
 .col-sm-3 {
   min-height: 250px;
+
+  padding: 0;
 }
 /* Top Title/Header */
 .title {
@@ -34,6 +37,9 @@ input {
 }
 .img-ex {
   width: 100%;
+}
+.ex-header {
+  margin-bottom: 20px;
 }
 /* END Top Title/Header */
 .btn {
@@ -91,7 +97,8 @@ input {
 .collapse-fixed-content {
   position: absolute;
   top: 30px;
-  left: 0px;
+  left: 9px;
+  overflow: hidden;
 }
 .collapsing {
   color: none;
@@ -100,8 +107,18 @@ input {
 }
 .expanded-container {
   background-color: rgba(255,255,255,.6);
-  width: 24.8vw;
-  height: 225px;
+  /* width: 24.8vw;
+  height: 225px; */
+  width: 60vw;
+  max-width: 23vw;
+  /* margin-right: 13%;
+  margin-left: 13%; */
+  height: 200px;
+  /* overflow: hidden; */
+  /* position: relative; */
+  /* left: 0;
+  right: 0;
+  width: inherit; */
 }
 /* END Collapse styling */
 
@@ -125,6 +142,11 @@ input {
   left: 20%;
 }
 .btn-block {
-  width: 100%;
+  width: 94%;
+  margin-right: 3%;
+  margin-left: 3%;
+}
+#cards-container {
+  margin: 0px 10px 10px 10px;
 }
 /* Location cards */
