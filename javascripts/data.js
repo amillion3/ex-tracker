@@ -2,6 +2,8 @@
 const loadExData = require('./ex');
 const dom = require ('./dom');
 const loadLocations = require('./locations');
+const bindEvents = require('./events');
+const dataGateKeeper = require('./dataGatekeeper');
 
 const successLoadEx = data => {
   $('#ex-photo').append(dom.printExPhoto(data.ex));
@@ -9,7 +11,8 @@ const successLoadEx = data => {
 };
 
 const successLoadLocations = data => {
-  $('#cards-container').append(dom.printLocations(data.locations));
+  dataGateKeeper.setAllLocations(data.locations);
+  $('#cards-container').append(dom.printLocations(dataGateKeeper.returnAllLocations()));
 };
 
 const fail = () => {
@@ -19,6 +22,7 @@ const fail = () => {
 const initializer = () => {
   loadExData(successLoadEx, fail);
   loadLocations(successLoadLocations, fail);
+  bindEvents();
 };
 
 module.exports = initializer;
