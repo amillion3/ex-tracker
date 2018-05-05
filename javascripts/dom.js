@@ -27,8 +27,7 @@ const printLocations = input => {
   let output = '';
   console.log(input);
   input.forEach(location => {
-    let displayLocation = '';
-    displayLocation = (location.address.split(',', 1));
+    const displayLocation = (location.address.split(',', 1));
     output += `
     <div class='col-sm-3 text-center'>
       <img draggable="false" class='img-loc-fixed img-responsive' src='${location.imageUrl}'>
