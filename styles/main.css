@@ -5,6 +5,7 @@ font-family: 'Open Sans', sans-serif; */
 body {
   background-color: #CE9478;
   box-sizing: border-box;
+  margin-top: 20px;
   margin-bottom: 105px;
   overflow-x: hidden;
 }
@@ -16,6 +17,13 @@ h4,h5,h6,p,a,input,button,label {
 }
 h1 {
   font-size: 60px;
+
+}
+h2 {
+
+}
+h3, h4, h5, h6, a, input, label {
+  color: black
 }
 img {
   /* max-width: 200px; */
@@ -29,9 +37,6 @@ input {
   min-height: 200px;
 }
 /* Top Title/Header */
-.title {
-  padding-top: 20px;
-}
 .img-ex {
   width: 100%;
 }
@@ -39,15 +44,25 @@ input {
   margin-bottom: 20px;
 }
 /* END Top Title/Header */
-.btn {
+.button {
   border-radius: 0px;
   color: white;
   font-size: 18px;
   margin: 0 0 10px 0;
+  padding: 5px 20px 5px 20px;
+  border: none;
 }
-.btn:focus{
+.button:focus{
   outline: none;
 }
+.button:active,
+.button:visited {
+  color: white;
+}
+.button {
+  color: white;
+}
+
 /* Button filter/searching */
 .btn-location {
   background-color: #57658B;
@@ -57,6 +72,9 @@ input {
 .btn-location:hover {
   background-color: #505E82;
   border-bottom: 3px solid #57658B;
+  color: white;
+}
+.btn-location:active {
   color: white;
 }
 .btn-timing {
@@ -73,6 +91,7 @@ input {
   background-color: #CEC778;
   border-bottom: 3px solid #C1BA6E;
   color: white;
+  margin-bottom: 6px;
 }
 .btn-search:hover {
   background-color: #C1BA6E;

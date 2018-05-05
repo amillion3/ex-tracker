@@ -30,7 +30,7 @@ const printLocations = input => {
     const mapUrl = `https://www.google.com/maps/place/${location.address}`;
     output += `
       <div class='col-sm-3 text-center location'>
-        <button type="button" class="btn btn-location" data-container="body" data-toggle="popover" data-html="true" data-placement="bottom"
+        <button type="button" class="button btn-location" data-container="body" data-toggle="popover" data-html="true" data-placement="bottom"
           data-content="${location.name}<br/>${displayLocation}<br/><a href='${mapUrl}' target='_blank' alt='Location'>Google Maps</a>">
               Details
         </button>
