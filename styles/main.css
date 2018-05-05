@@ -17,16 +17,11 @@ h4,h5,h6,p,a,input,button,label {
 }
 h1 {
   font-size: 60px;
-
-}
-h2 {
-
 }
 h3, h4, h5, h6, a, input, label {
   color: black
 }
 img {
-  /* max-width: 200px; */
   user-select: none;
   border: 5px solid black;
 }
