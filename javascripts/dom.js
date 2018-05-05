@@ -16,9 +16,9 @@ const printExPhoto = input => {
 const printExDetails = input => {
   const flawsDom = flaws(input);
   const output = `
-  <p>Name: ${input[0].name}</p>
-  <p>Age: ${input[0].age}</p>
-  <p>Flaws: ${flawsDom}</p>`;
+  <h2>Name: ${input[0].name}</h2>
+  <h2>Age: ${input[0].age}</h2>
+  <h2>Flaws: ${flawsDom}</h2>`;
   return output;
 };
 // End Print Ex Stuff
