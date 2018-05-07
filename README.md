@@ -25,7 +25,7 @@ In this screenshot, we see that the user has searched for `taco`. The only match
 ![Search funtionality](https://raw.githubusercontent.com/amillion3/ex-tracker/master/images/screenshots/search.png)
 ___
 
-In this screenshot, the user has filtered by time of day, selecting the Morning button. The 4 cards shown are all locations my ex frequentlys in the morning.
+In this screenshot, the user has filtered by time of day, selecting the Morning button. The 4 cards shown are all locations my ex frequents in the morning.
 
 ![Time of day filtering](https://raw.githubusercontent.com/amillion3/ex-tracker/master/images/screenshots/button-time.png)
 ___
