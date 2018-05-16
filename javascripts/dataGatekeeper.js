@@ -1,4 +1,5 @@
 let locations = [];
+let exs = [];
 let timesOfDay = [];
 
 const setTimesOfDay = () => {
@@ -14,11 +15,18 @@ const returnAllLocations = () => locations;
 
 const setAllLocations = input => {
   locations = input;
+  console.log(locations);
   setTimesOfDay();
+};
+
+const setAllExs = input => {
+  exs = input;
+  console.log(exs);
 };
 
 module.exports = {
   setAllLocations,
   returnAllLocations,
   returnTimesOfDay,
+  setAllExs,
 };
