@@ -58,18 +58,53 @@ Note: we are exporting this function
 //   });
 // };
 
+const megaSmash = () => { console.log('megasmashhhh'); };
+
+const getAllJSONs = () => {
+  let locations = [];
+  let exs = [];
+  return getAllLocations()
+    .then(result => {
+      locations = result;
+      return getAllExs();
+    }).then(result2 => {
+      exs = result2;
+      return megaSmash();
+    }).then(result3 => {
+      dataGateKeeper.setMegasmash(locations, exs);
+    });
+};
+
 const initializer = () => {
   bindEvents();
+  getAllJSONs();
   // this works, but it's UGLY
-  getAllExs().then(exs => {
-    dataGateKeeper.setAllExs(exs);
-    getAllLocations().then(locations => {
-      dataGateKeeper.setAllLocations(locations);
-    });
-  });
+  // getAllExs().then(exs => {
+  //   dataGateKeeper.setAllExs(exs);
+  //   getAllLocations().then(locations => {
+  //     dataGateKeeper.setAllLocations(locations);
+  //   });
+  // });
 
-  dataGateKeeper.setAllLocations(getAllLocations());
-  // OLD CODE BELOW
+  /* Promise Chaining Solution, returning a resolved promise with the data */
+// const getAllPups = () => {
+//   let dogos = [];
+//   return firstPupJSON()
+//     .then((result) => {
+//       dogos = [...result,];
+//       return secondPupJSON();
+//     }).then((result2) => {
+//       dogos = [...dogos, ...result2,];
+//       return thirdPupJSON();
+//     }).then((result3) => {
+//       dogos = [...dogos, ...result3,];
+//       return Promise.resolve(dogos);
+//     }).catch((errorMsg) => {
+//       console.error(errorMsg);
+//     });
+// };
+
+  // ORIGINAL CODE BELOW
   // loadExData(successLoadEx, fail);
   // loadLocations(successLoadLocations, fail);
 
