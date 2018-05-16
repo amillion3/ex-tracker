@@ -58,7 +58,25 @@ Note: we are exporting this function
 //   });
 // };
 
-const megaSmash = () => { console.log('megasmashhhh'); };
+const megaSmash = (locations, exs) => {
+  console.log('megasmashhhh');
+  console.log('locations', locations);
+  console.log('exs', exs);
+  const smashedArrays = [];
+  locations.forEach(location => {
+    exs.forEach(ex => {
+      ex.locationId.forEach(exLocationId => {
+        if (exLocationId === location.id) {
+          const tempLocation = Object.values(location);
+          const tempEx = Object.values(ex);
+          const temp = [...tempLocation, ...tempEx,];
+          smashedArrays.push(temp);
+        }
+      });
+    });
+  });
+  console.log('shit got smashed', smashedArrays);
+};
 
 const getAllJSONs = () => {
   let locations = [];
@@ -69,7 +87,7 @@ const getAllJSONs = () => {
       return getAllExs();
     }).then(result2 => {
       exs = result2;
-      return megaSmash();
+      return megaSmash(locations, exs);
     }).then(result3 => {
       dataGateKeeper.setMegasmash(locations, exs);
     });
