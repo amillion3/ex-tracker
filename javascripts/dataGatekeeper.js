@@ -20,6 +20,10 @@ let megaSmashed = [];
 //   setTimesOfDay();
 // };
 
+const getExs = () => {
+
+};
+
 const setMegasmash = (locations) => {
   megaSmashed = locations;
   console.log('datagatekeeper', megaSmashed);
@@ -29,5 +33,6 @@ module.exports = {
   // setAllLocations,
   // returnAllLocations,
   // returnTimesOfDay,
+  getExs,
   setMegasmash,
 };

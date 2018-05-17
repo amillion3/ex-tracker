@@ -3,22 +3,28 @@
 // Begin Print Ex Stuff
 const flaws = input => {
   let flawsOutput = '';
-  const flawsArray = input[0].flaws;
+  const flawsArray = input.flaws;
   flawsArray.forEach((flaw) => {
     flawsOutput += `${flaw}, `;
   });
   return flawsOutput.slice(0, -2); // removes trailing comma and space
 };
-const printExPhoto = input => {
-  const output = `<img class='img-ex img-responsive' src='${input[0].imageUrl}' draggable="false" alt='My ex, Ann Veal'>`;
+const printExPhoto = exsPhotos => {
+  let output = '';
+  exsPhotos.forEach(photo => {
+    output += `<img class='img-ex img-responsive' src='${photo.imageUrl}' draggable="false" alt='One of my exs'>`;
+  });
   return output;
 };
-const printExDetails = input => {
-  const flawsDom = flaws(input);
-  const output = `
-  <h2>Name: ${input[0].name}</h2>
-  <h2>Age: ${input[0].age}</h2>
-  <h2>Flaws: ${flawsDom}</h2>`;
+const printExDetails = exs => {
+  let output = '';
+  exs.forEach(ex => {
+    const flawsDom = flaws(ex);
+    output += `
+    <h2>Name: ${ex.name}</h2>
+    <h2>Age: ${ex.age}</h2>
+    <h2>Flaws: ${flawsDom}</h2>`;
+  });
   return output;
 };
 // End Print Ex Stuff
