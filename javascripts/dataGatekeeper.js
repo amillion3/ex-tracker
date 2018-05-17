@@ -20,9 +20,9 @@ let megaSmashed = [];
 //   setTimesOfDay();
 // };
 
-const setMegasmash = (locations, exs) => {
+const setMegasmash = (locations) => {
   megaSmashed = locations;
-  console.log(megaSmashed);
+  console.log('datagatekeeper', megaSmashed);
 };
 
 module.exports = {

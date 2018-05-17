@@ -59,23 +59,17 @@ Note: we are exporting this function
 // };
 
 const megaSmash = (locations, exs) => {
-  console.log('megasmashhhh');
-  console.log('locations', locations);
-  console.log('exs', exs);
-  const smashedArrays = [];
   locations.forEach(location => {
+    location.names = [];
     exs.forEach(ex => {
       ex.locationId.forEach(exLocationId => {
         if (exLocationId === location.id) {
-          const tempLocation = Object.values(location);
-          const tempEx = Object.values(ex);
-          const temp = [...tempLocation, ...tempEx,];
-          smashedArrays.push(temp);
+          location.names.push(ex.name);
         }
       });
     });
   });
-  console.log('shit got smashed', smashedArrays);
+  dataGateKeeper.setMegasmash(locations);
 };
 
 const getAllJSONs = () => {
@@ -89,7 +83,8 @@ const getAllJSONs = () => {
       exs = result2;
       return megaSmash(locations, exs);
     }).then(result3 => {
-      dataGateKeeper.setMegasmash(locations, exs);
+      // what should go here?
+      // dataGateKeeper.setMegasmash(locations, exs);
     });
 };
 
