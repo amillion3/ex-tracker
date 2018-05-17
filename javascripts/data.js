@@ -5,21 +5,6 @@ const loadLocations = require('./locations');
 const bindEvents = require('./events');
 const dataGateKeeper = require('./dataGatekeeper');
 
-// const successLoadEx = data => {
-//   $('#ex-photo').append(dom.printExPhoto(data.ex));
-//   $('#ex-details').append(dom.printExDetails(data.ex));
-// };
-
-// const successLoadLocations = data => {
-//   dataGateKeeper.setAllLocations(data.locations);
-//   $('#cards-container').append(dom.printLocations(dataGateKeeper.returnAllLocations()));
-//   $('[data-toggle="popover"]').popover();
-// };
-
-// const fail = () => {
-//   console.error('It\'s broken');
-// };
-
 const getAllExs = () => {
   let allExs = [];
   return loadExData().then(exsArray => {
@@ -35,28 +20,6 @@ const getAllLocations = () => {
     return Promise.resolve(allLocations);
   });
 };
-
-/*
-Using PROMISE.ALL to get the matching foods for the first Pup
-Note: we are exporting this function
-*/
-// const singlePup = () => {
-//   let pup = {};
-//   return getAllPups().then((pups) => {
-//     pup = pups[0];
-//     return Promise.all([firstFoodJSON(), secondFoodJSON(), thirdFoodJSON(),]);
-//   }).then((foodz) => {
-//     const allTheFood = [...foodz[0], ...foodz[1], ...foodz[2],];
-//     const matching = allTheFood.filter((food) => {
-//       if (pup.favFoodId === food.key) {
-//         return true;
-//       };
-//       return false;
-//     });
-//     pup.favFood = matching;
-//     return Promise.resolve(pup);
-//   });
-// };
 
 const megaSmash = (locations, exs) => {
   locations.forEach(location => {
@@ -91,32 +54,6 @@ const getAllJSONs = () => {
 const initializer = () => {
   bindEvents();
   getAllJSONs();
-  // this works, but it's UGLY
-  // getAllExs().then(exs => {
-  //   dataGateKeeper.setAllExs(exs);
-  //   getAllLocations().then(locations => {
-  //     dataGateKeeper.setAllLocations(locations);
-  //   });
-  // });
-
-  /* Promise Chaining Solution, returning a resolved promise with the data */
-// const getAllPups = () => {
-//   let dogos = [];
-//   return firstPupJSON()
-//     .then((result) => {
-//       dogos = [...result,];
-//       return secondPupJSON();
-//     }).then((result2) => {
-//       dogos = [...dogos, ...result2,];
-//       return thirdPupJSON();
-//     }).then((result3) => {
-//       dogos = [...dogos, ...result3,];
-//       return Promise.resolve(dogos);
-//     }).catch((errorMsg) => {
-//       console.error(errorMsg);
-//     });
-// };
-
   // ORIGINAL CODE BELOW
   // loadExData(successLoadEx, fail);
   // loadLocations(successLoadLocations, fail);
