@@ -41,7 +41,6 @@ const successPrintLocations = input => {
   $('[data-toggle="popover"]').popover();
 };
 const successPrintExs = input => {
-  $('#ex-photo').append(dom.printExPhoto(input));
   $('#ex-details').append(dom.printExDetails(input));
 };
 
