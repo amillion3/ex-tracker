@@ -15,7 +15,7 @@ const printExDetails = exs => {
   exs.forEach(ex => {
     const flawsDom = flaws(ex);
     output += `
-    <div class="panel panel-default col-sm-4">
+    <div class="panel panel-default col-sm-4" id="${ex.name}">
       <div class="panel-body">
         <img class='img-ex img-responsive' src='${ex.imageUrl}' draggable="false" alt='My ex, ${ex.name}'>
       </div>

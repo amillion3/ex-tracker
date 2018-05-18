@@ -2,6 +2,22 @@
 const dataGateKeeper = require('./dataGatekeeper');
 const dom = require ('./dom');
 
+// Clear/Show DOM for single ex view
+const clearDOMAllExsLocations = () => {
+  $('#all-exs-locations').html('');
+  // call build single ex view
+};
+const clearSingleExView = () => {
+  $('#single-ex-view').html('');
+  // call build all exs + locations view
+};
+// END Clear/Show DOM for single ex view
+
+const btnPanelClicked = e => {
+  clearDOMAllExsLocations();
+  console.log(clearSingleExView);
+};
+
 const printMatches = matches => {
   $('#cards-container').append(dom.printLocations(matches));
   $('[data-toggle="popover"]').popover();
@@ -28,7 +44,6 @@ const findSearchMatches = outputArray => {
         matchingLocations.push(location);
       } else if (formattedNamesArray.length > 0) {
         formattedNamesArray.forEach(nameFromArray => {
-          console.log(nameFromArray.toLowerCase());
           if (nameFromArray.toLowerCase().indexOf(formattedOutput) > -1) {
             matchingLocations.push(location);
           }
@@ -78,6 +93,7 @@ const btnTimeClicked = e => {
 const bindEvents = () => {
   $('.btn-submit').on('click', btnSubmitClicked);
   $('#buttons').on('click', '.btn-timing', btnTimeClicked);
+  $('.panel').on('click', btnPanelClicked);
 };
 
 module.exports = bindEvents;

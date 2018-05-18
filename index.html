@@ -14,30 +14,33 @@
     <div class='row ex-header'>
       <div class='col-sm-12 text-center'><h1>Where in Nashville is my ex?</h1></div>
     </div> <!-- End row div -->
-    <div class='row'>
-      <div class='col-sm-offset-2 col-sm-8' id='ex-details'>
-      </div>
-    </div> <!-- End row div -->
-    <div class='row' id='cards-container'></div>
-    <div class='row navbar-fixed-bottom' id='filter-container'>
-      <div class='col-sm-6 text-center'>
-        <h3>Filter by Time of Day</h3>
-        <div id='buttons'>
-          <button id='morning-btn' class='btn btn-timing'>Morning</button>
-          <button id='afternoon-btn' class='btn btn-timing'>Afternoon</button>
-          <button id='evening-btn' class='btn btn-timing'>Evening</button>
-          <button id='dark-btn' class='btn btn-timing'>After Dark</button>
+    <div id='all-exs-locations'></div>
+      <div class='row'>
+        <div class='col-sm-offset-2 col-sm-8' id='ex-details'>
         </div>
-      </div>
-      <div class='col-sm-6 text-center'>
-          <div id='search-box'>
-            <h3>Search by name or address</h3>
-            <label for="user-input"></label>
-            <input type="text" id="user-input" name="location">
-            <button class="btn btn-submit btn-search">Search</button>
+      </div> <!-- End row div -->
+      <div class='row' id='cards-container'></div>
+      <div class='row navbar-fixed-bottom' id='filter-container'>
+        <div class='col-sm-6 text-center'>
+          <h3>Filter by Time of Day</h3>
+          <div id='buttons'>
+            <button id='morning-btn' class='btn btn-timing'>Morning</button>
+            <button id='afternoon-btn' class='btn btn-timing'>Afternoon</button>
+            <button id='evening-btn' class='btn btn-timing'>Evening</button>
+            <button id='dark-btn' class='btn btn-timing'>After Dark</button>
           </div>
         </div>
-    </div><!-- End filter-container div -->
+        <div class='col-sm-6 text-center'>
+            <div id='search-box'>
+              <h3>Search by name or address</h3>
+              <label for="user-input"></label>
+              <input type="text" id="user-input" name="location">
+              <button class="btn btn-submit btn-search">Search</button>
+            </div>
+          </div>
+      </div><!-- End filter-container div -->
+    </div> <!-- End all-exs-locations div -->
+    <div id='single-ex-view'></div> <!-- End single-ex-view div -->
   </div> <!-- End container-fluid div -->
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
