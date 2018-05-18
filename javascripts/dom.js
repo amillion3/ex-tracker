@@ -3,26 +3,45 @@
 // Begin Print Ex Stuff
 const flaws = input => {
   let flawsOutput = '';
-  const flawsArray = input[0].flaws;
+  const flawsArray = input.flaws;
   flawsArray.forEach((flaw) => {
     flawsOutput += `${flaw}, `;
   });
   return flawsOutput.slice(0, -2); // removes trailing comma and space
 };
-const printExPhoto = input => {
-  const output = `<img class='img-ex img-responsive' src='${input[0].imageUrl}' draggable="false" alt='My ex, Ann Veal'>`;
-  return output;
-};
-const printExDetails = input => {
-  const flawsDom = flaws(input);
-  const output = `
-  <h2>Name: ${input[0].name}</h2>
-  <h2>Age: ${input[0].age}</h2>
-  <h2>Flaws: ${flawsDom}</h2>`;
+
+const printExDetails = exs => {
+  let output = '';
+  exs.forEach(ex => {
+    const flawsDom = flaws(ex);
+    output += `
+    <div class="panel panel-default col-sm-4">
+      <div class="panel-body">
+        <img class='img-ex img-responsive' src='${ex.imageUrl}' draggable="false" alt='My ex, ${ex.name}'>
+      </div>
+      <div class="panel-footer">
+        <h3>Name: ${ex.name}</h3>
+        <h3>Age: ${ex.age}</h3>
+        <h3>Flaws: ${flawsDom}</h3></div>
+    </div>`;
+  });
   return output;
 };
 // End Print Ex Stuff
 // Begin Print Location Stuff
+const printNamesIfLocationMatches = location => {
+  let output = '';
+  if (location.names.length > 0) {
+    location.names.forEach(name => {
+      output += name + ', ';
+      console.log(output);
+    });
+  } else {
+    output = 'No exs here  ';
+  }
+  return output.slice(0, -2);
+};
+
 const printLocations = input => {
   let output = '';
   input.forEach(location => {
@@ -31,7 +50,11 @@ const printLocations = input => {
     output += `
       <div class='col-sm-3 text-center location'>
         <button type="button" class="button btn-location" data-container="body" data-toggle="popover" data-html="true" data-placement="bottom"
-          data-content="${location.name}<br/>${displayLocation}<br/><a href='${mapUrl}' target='_blank' alt='Location'>Google Maps</a>">
+          data-content=
+          "${location.name}<br/>
+          ${displayLocation}<br/>
+          ${printNamesIfLocationMatches(location)}<br/>
+          <a href='${mapUrl}' target='_blank' alt='Location'>Google Maps</a>">
               Details
         </button>
         <img draggable="false" class='img-loc-fixed img-responsive' src='${location.imageUrl}'>
@@ -42,7 +65,6 @@ const printLocations = input => {
 // End Print Location Stuff
 
 module.exports = {
-  printExPhoto,
   printExDetails,
   printLocations,
 };

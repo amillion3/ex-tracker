@@ -5,25 +5,70 @@ const loadLocations = require('./locations');
 const bindEvents = require('./events');
 const dataGateKeeper = require('./dataGatekeeper');
 
-const successLoadEx = data => {
-  $('#ex-photo').append(dom.printExPhoto(data.ex));
-  $('#ex-details').append(dom.printExDetails(data.ex));
+const getAllExs = () => {
+  let allExs = [];
+  return loadExData().then(exsArray => {
+    allExs = exsArray;
+    return Promise.resolve(allExs);
+  });
 };
 
-const successLoadLocations = data => {
-  dataGateKeeper.setAllLocations(data.locations);
-  $('#cards-container').append(dom.printLocations(dataGateKeeper.returnAllLocations()));
+const getAllLocations = () => {
+  let allLocations = [];
+  return loadLocations().then(locationsArray => {
+    allLocations = locationsArray;
+    return Promise.resolve(allLocations);
+  });
+};
+
+const megaSmash = (locations, exs) => {
+  locations.forEach(location => {
+    location.names = [];
+    exs.forEach(ex => {
+      ex.locationId.forEach(exLocationId => {
+        if (exLocationId === location.id) {
+          location.names.push(ex.name);
+        }
+      });
+    });
+  });
+  dataGateKeeper.setMegasmash(locations);
+  return [locations, exs,];
+};
+
+const successPrintLocations = input => {
+  $('#cards-container').append(dom.printLocations(input));
   $('[data-toggle="popover"]').popover();
 };
+const successPrintExs = input => {
+  $('#ex-details').append(dom.printExDetails(input));
+};
 
-const fail = () => {
-  console.error('It\'s broken');
+const getAllJSONs = () => {
+  let locations = [];
+  let exs = [];
+  return getAllLocations()
+    .then(result => {
+      locations = result;
+      return getAllExs();
+    }).then(result2 => {
+      exs = result2;
+      return megaSmash(locations, exs);
+    }).then(result3 => {
+      successPrintLocations(result3[0]);
+      successPrintExs(result3[1]);
+      // what should go here?
+      // dataGateKeeper.setMegasmash(locations, exs);
+    });
 };
 
 const initializer = () => {
-  loadExData(successLoadEx, fail);
-  loadLocations(successLoadLocations, fail);
   bindEvents();
+  getAllJSONs();
+  // ORIGINAL CODE BELOW
+  // loadExData(successLoadEx, fail);
+  // loadLocations(successLoadLocations, fail);
+
 };
 
 module.exports = initializer;

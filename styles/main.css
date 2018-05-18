@@ -39,6 +39,11 @@ input {
   margin-bottom: 20px;
 }
 /* END Top Title/Header */
+/* Ex panels */
+.panel {
+  width: 33.333%;
+}
+/* END Ex panels  */
 .button {
   border-radius: 0px;
   color: white;
