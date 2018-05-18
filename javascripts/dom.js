@@ -34,10 +34,7 @@ const printNamesIfLocationMatches = location => {
   if (location.names.length > 0) {
     location.names.forEach(name => {
       output += name + ', ';
-      console.log(output);
     });
-  } else {
-    output = 'No exs here  ';
   }
   return output.slice(0, -2);
 };
