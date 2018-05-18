@@ -17,6 +17,7 @@ const getAllLocations = () => {
   let allLocations = [];
   return loadLocations().then(locationsArray => {
     allLocations = locationsArray;
+    dataGateKeeper.setAllLocations(allLocations);
     return Promise.resolve(allLocations);
   });
 };

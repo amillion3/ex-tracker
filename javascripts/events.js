@@ -4,11 +4,13 @@ const dom = require ('./dom');
 
 const printMatches = matches => {
   $('#cards-container').append(dom.printLocations(matches));
+  $('[data-toggle="popover"]').popover();
 };
 
 const clearDomOfCards = matches => {
   $('#cards-container').html('');
   printMatches(matches);
+  $('[data-toggle="popover"]').popover();
 };
 // Submit button functionality -----------------
 const findSearchMatches = outputArray => {
@@ -18,11 +20,19 @@ const findSearchMatches = outputArray => {
     outputArray.forEach(output => {
       const formattedLocation = location.name.toLowerCase();
       const formattedAddress = location.address.toLowerCase();
+      const formattedNamesArray = location.names;
       const formattedOutput = output.toString();
       if (formattedLocation.indexOf(formattedOutput) > -1) {
         matchingLocations.push(location);
       } else if (formattedAddress.indexOf(formattedOutput) > -1) {
         matchingLocations.push(location);
+      } else if (formattedNamesArray.length > 0) {
+        formattedNamesArray.forEach(nameFromArray => {
+          console.log(nameFromArray.toLowerCase());
+          if (nameFromArray.toLowerCase().indexOf(formattedOutput) > -1) {
+            matchingLocations.push(location);
+          }
+        });
       }
     });
   });
