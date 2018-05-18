@@ -15,20 +15,33 @@ const printExDetails = exs => {
   exs.forEach(ex => {
     const flawsDom = flaws(ex);
     output += `
-    <div class="panel panel-default">
+    <div class="panel panel-default col-sm-4">
       <div class="panel-body">
-        <img class='img-ex img-responsive' src='${ex.imageUrl}' draggable="false" alt='One of my exs'>
+        <img class='img-ex img-responsive' src='${ex.imageUrl}' draggable="false" alt='My ex, ${ex.name}'>
       </div>
       <div class="panel-footer">
-        <h2>Name: ${ex.name}</h2>
-        <h2>Age: ${ex.age}</h2>
-        <h2>Flaws: ${flawsDom}</h2></div>
+        <h3>Name: ${ex.name}</h3>
+        <h3>Age: ${ex.age}</h3>
+        <h3>Flaws: ${flawsDom}</h3></div>
     </div>`;
   });
   return output;
 };
 // End Print Ex Stuff
 // Begin Print Location Stuff
+const printNamesIfLocationMatches = location => {
+  let output = '';
+  if (location.names.length > 0) {
+    location.names.forEach(name => {
+      output += name + ', ';
+      console.log(output);
+    });
+  } else {
+    output = 'No exs here  ';
+  }
+  return output.slice(0, -2);
+};
+
 const printLocations = input => {
   let output = '';
   input.forEach(location => {
@@ -37,7 +50,11 @@ const printLocations = input => {
     output += `
       <div class='col-sm-3 text-center location'>
         <button type="button" class="button btn-location" data-container="body" data-toggle="popover" data-html="true" data-placement="bottom"
-          data-content="${location.name}<br/>${displayLocation}<br/><a href='${mapUrl}' target='_blank' alt='Location'>Google Maps</a>">
+          data-content=
+          "${location.name}<br/>
+          ${displayLocation}<br/>
+          ${printNamesIfLocationMatches(location)}<br/>
+          <a href='${mapUrl}' target='_blank' alt='Location'>Google Maps</a>">
               Details
         </button>
         <img draggable="false" class='img-loc-fixed img-responsive' src='${location.imageUrl}'>
