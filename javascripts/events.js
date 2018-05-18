@@ -13,10 +13,13 @@ const clearSingleExView = () => {
 };
 // END Clear/Show DOM for single ex view
 
+// Ex-clicked
 const btnPanelClicked = e => {
   clearDOMAllExsLocations();
+  // TO DO gather the ex-id and call a function to retrieve their info
   console.log(clearSingleExView);
 };
+// END Ex-clicked
 
 const printMatches = matches => {
   $('#cards-container').append(dom.printLocations(matches));

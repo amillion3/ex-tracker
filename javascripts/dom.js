@@ -61,7 +61,14 @@ const printLocations = input => {
 };
 // End Print Location Stuff
 
+// Print single ex-view
+const setupSingleExView = () => {
+  console.log('hi');
+};
+// END rint single ex-view
+
 module.exports = {
   printExDetails,
   printLocations,
+  setupSingleExView,
 };
