@@ -2,6 +2,7 @@
 
 // Begin Print Ex Stuff
 const flaws = input => {
+  console.log('flaws', input);
   let flawsOutput = '';
   const flawsArray = input.flaws;
   flawsArray.forEach((flaw) => {
@@ -80,11 +81,30 @@ const buildExProfile = ex => {
   return output;
 };
 
-const buildLocationDomString =
+const buildLocationDomString = locationObject => {
+  const output = '';
+  locationObject.forEach(location => {
+    output += `
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="thumbnail">
+          <img src="${location.imageUrl}" alt="Photo of ${location.name}">
+          <div class="caption">
+            <h3>${location.name}</h3>
+            <p>${location.address}</p>
+            <p>${location.timeOfDay}</p>
+            <p><a href="#" class="btn btn-primary" role="button">Google Maps</a></p>
+          </div>
+        </div>
+      </div>
+    </div>`;
+  });
+  return output;
+};
 
-const setupSingleExView = (exLadyObject) => {
+const setupSingleExView = (exLadyObject, locationObjects) => {
   const exProfileDomString = buildExProfile(exLadyObject);
-  const exLocationDomString = buildLocationDomString(exLadyObject);
+  const exLocationDomString = buildLocationDomString(locationObjects);
   $('#single-ex-profile').html(exProfileDomString);
   $('#single-ex-locations').html(exLocationDomString);
 };

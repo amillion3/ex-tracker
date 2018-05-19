@@ -13,27 +13,6 @@ const clearSingleExView = () => {
 };
 // END Clear/Show DOM for single ex view
 
-// Ex-clicked
-const getSingleExObject = exName => {
-  const allExs = dataGateKeeper.getExs();
-  allExs.forEach(ex => {
-    if (ex.name === exName) {
-      return ex;
-    }
-  });
-};
-
-const btnPanelClicked = e => {
-  const buttonClicked = $(e.target).closest('.panel')[0].id;
-  // gets a single ex object that matches the btn click
-  const exLady = getSingleExObject(buttonClicked);
-  clearDOMAllExsLocations();
-  dom.setupSingleExView(exLady);
-  console.log(clearSingleExView());
-  // TO DO gather the ex-id and call a function to retrieve their info
-};
-// END Ex-clicked
-
 const printMatches = matches => {
   $('#cards-container').append(dom.printLocations(matches));
   $('[data-toggle="popover"]').popover();
@@ -46,6 +25,7 @@ const clearDomOfCards = matches => {
 };
 // Submit button functionality -----------------
 const findSearchMatches = outputArray => {
+  console.log(outputArray);
   const allLocations = dataGateKeeper.returnAllLocations();
   const matchingLocations = [];
   allLocations.forEach(location => {
@@ -68,14 +48,16 @@ const findSearchMatches = outputArray => {
     });
   });
   if (matchingLocations.length > 0) {
-    clearDomOfCards([ ...new Set(matchingLocations),]);
+    return ([ ...new Set(matchingLocations),]);
+    // clearDomOfCards([ ...new Set(matchingLocations),]);
   } else {
     alert('No matches found, please try your query again.');
   }
 };
 const cleanAndValidate = submitButtonText => {
   const outputArray = submitButtonText.replace(/[^A-Za-z\s]/g, '').toLowerCase().split(' ');
-  findSearchMatches(outputArray);
+  const results = findSearchMatches(outputArray);
+  clearDomOfCards(results);
 };
 const btnSubmitClicked = () => {
   const submitButtonText = $('#user-input').val();
@@ -106,10 +88,35 @@ const btnTimeClicked = e => {
 
 // END Time of Days button functionality -----------------
 
+// Ex-clicked
+const getSingleExObject = exName => {
+  const allExs = dataGateKeeper.getExs();
+  const match = [];
+  allExs.forEach(ex => {
+    if (ex.name === exName) {
+      match.push(ex);
+    }
+  });
+  return match[0];
+};
+
+const btnPanelClicked = e => {
+  const buttonClicked = $(e.target).closest('.panel')[0].id;
+  // gets a single ex object that matches the btn click
+  const exLady = getSingleExObject(buttonClicked);
+  console.log('exLady ', exLady);
+  const locations = findSearchMatches(exLady.name.split(' '));
+  clearDOMAllExsLocations();
+  dom.setupSingleExView(exLady, locations);
+  console.log(clearSingleExView());
+  // TO DO gather the ex-id and call a function to retrieve their info
+};
+// END Ex-clicked
+
 const bindEvents = () => {
   $('.btn-submit').on('click', btnSubmitClicked);
   $('#buttons').on('click', '.btn-timing', btnTimeClicked);
-  $('.panel').on('click', btnPanelClicked);
+  $('#ex-details').on('click', '.panel-default', btnPanelClicked);
 };
 
 module.exports = bindEvents;
