@@ -62,31 +62,31 @@ const printLocations = input => {
 // End Print Location Stuff
 
 // Print single ex-view-----------------------
-// const buildExProfile = ex => {
-//   const output = `
-//     <div class="row">
-//       <div class="col-sm-12">
-//         <div class="thumbnail">
-//           <img src="${EX.URL}" alt="Photo of ${EX.NAME}">
-//           <div class="caption">
-//             <h3>${EX.NAME}</h3>
-//             <p>${EX.ATTR}</p>
-//             <p>${EX.ATTR}</p>
-//             <p>${EX.ATTR}</p>
-//             <p>${EX.ATTR}</p>
-//             <p><a href="#" class="btn btn-primary" role="button">Go back</a></p>
-//           </div>
-//         </div>
-//       </div>
-//     </div>`;
-//   return output;
-// };
+const buildExProfile = ex => {
+  const output = `
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="thumbnail">
+          <img src="${ex.imageUrl}" alt="Photo of ${ex.name}">
+          <div class="caption">
+            <h3>${ex.name}</h3>
+            <p>${ex.age} years old</p>
+            <p>Flaws: ${flaws(ex)}</p>
+            <p><a href="#" class="btn btn-primary" role="button">Go back</a></p>
+          </div>
+        </div>
+      </div>
+    </div>`;
+  return output;
+};
 
-const setupSingleExView = (exLady) => {
-  // get single lady object
+const buildLocationDomString =
 
-  // const exProfileDomString = buildExProfile(exLady);
-  // const exLocationDomString = buildLocationDomString(exLady);
+const setupSingleExView = (exLadyObject) => {
+  const exProfileDomString = buildExProfile(exLadyObject);
+  const exLocationDomString = buildLocationDomString(exLadyObject);
+  $('#single-ex-profile').html(exProfileDomString);
+  $('#single-ex-locations').html(exLocationDomString);
 };
 
 // END print single ex-view

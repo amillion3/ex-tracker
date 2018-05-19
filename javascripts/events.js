@@ -17,8 +17,7 @@ const clearSingleExView = () => {
 const getSingleExObject = exName => {
   const allExs = dataGateKeeper.getExs();
   allExs.forEach(ex => {
-    if (ex.name === 'exName') {
-      console.log('match', ex);
+    if (ex.name === exName) {
       return ex;
     }
   });
@@ -26,8 +25,8 @@ const getSingleExObject = exName => {
 
 const btnPanelClicked = e => {
   const buttonClicked = $(e.target).closest('.panel')[0].id;
+  // gets a single ex object that matches the btn click
   const exLady = getSingleExObject(buttonClicked);
-  console.log('exlady = ', exLady);
   clearDOMAllExsLocations();
   dom.setupSingleExView(exLady);
   console.log(clearSingleExView());

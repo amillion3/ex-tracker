@@ -9,6 +9,7 @@ const getAllExs = () => {
   let allExs = [];
   return loadExData().then(exsArray => {
     allExs = exsArray;
+    dataGateKeeper.setExs(allExs);
     return Promise.resolve(allExs);
   });
 };
@@ -33,7 +34,7 @@ const megaSmash = (locations, exs) => {
       });
     });
   });
-  dataGateKeeper.setMegasmash(locations);
+  // dataGateKeeper.setMegasmash(locations);
   return [locations, exs,];
 };
 
