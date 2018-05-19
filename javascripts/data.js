@@ -43,6 +43,7 @@ const successPrintLocations = input => {
 };
 const successPrintExs = input => {
   $('#ex-details').append(dom.printExDetails(input));
+  bindEvents();
 };
 
 const getAllJSONs = () => {
@@ -72,4 +73,6 @@ const initializer = () => {
 
 };
 
-module.exports = initializer;
+module.exports = {
+  initializer,
+};

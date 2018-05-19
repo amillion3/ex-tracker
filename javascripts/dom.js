@@ -17,7 +17,7 @@ const printExDetails = exs => {
     output += `
     <div class="panel panel-default col-sm-4" id="${ex.name}">
       <div class="panel-body">
-        <img class='img-ex img-responsive' src='${ex.imageUrl}' draggable="false" alt='My ex, ${ex.name}'>
+        <img class='img-ex img-responsive' src='${ex.imageUrl}' alt='My ex, ${ex.name}'>
       </div>
       <div class="panel-footer">
         <h3>Name: ${ex.name}</h3>
@@ -61,11 +61,35 @@ const printLocations = input => {
 };
 // End Print Location Stuff
 
-// Print single ex-view
-const setupSingleExView = () => {
-  console.log('hi');
+// Print single ex-view-----------------------
+// const buildExProfile = ex => {
+//   const output = `
+//     <div class="row">
+//       <div class="col-sm-12">
+//         <div class="thumbnail">
+//           <img src="${EX.URL}" alt="Photo of ${EX.NAME}">
+//           <div class="caption">
+//             <h3>${EX.NAME}</h3>
+//             <p>${EX.ATTR}</p>
+//             <p>${EX.ATTR}</p>
+//             <p>${EX.ATTR}</p>
+//             <p>${EX.ATTR}</p>
+//             <p><a href="#" class="btn btn-primary" role="button">Go back</a></p>
+//           </div>
+//         </div>
+//       </div>
+//     </div>`;
+//   return output;
+// };
+
+const setupSingleExView = (exLady) => {
+  // get single lady object
+
+  // const exProfileDomString = buildExProfile(exLady);
+  // const exLocationDomString = buildLocationDomString(exLady);
 };
-// END rint single ex-view
+
+// END print single ex-view
 
 module.exports = {
   printExDetails,

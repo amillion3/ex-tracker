@@ -14,10 +14,24 @@ const clearSingleExView = () => {
 // END Clear/Show DOM for single ex view
 
 // Ex-clicked
+const getSingleExObject = exName => {
+  const allExs = dataGateKeeper.getExs();
+  allExs.forEach(ex => {
+    if (ex.name === 'exName') {
+      console.log('match', ex);
+      return ex;
+    }
+  });
+};
+
 const btnPanelClicked = e => {
+  const buttonClicked = $(e.target).closest('.panel')[0].id;
+  const exLady = getSingleExObject(buttonClicked);
+  console.log('exlady = ', exLady);
   clearDOMAllExsLocations();
+  dom.setupSingleExView(exLady);
+  console.log(clearSingleExView());
   // TO DO gather the ex-id and call a function to retrieve their info
-  console.log(clearSingleExView);
 };
 // END Ex-clicked
 

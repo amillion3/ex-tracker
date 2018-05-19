@@ -1,6 +1,7 @@
 let megaSmashed = [];
 let locations = [];
 let timesOfDay = [];
+const exs = [];
 
 const setTimesOfDay = () => {
   locations.forEach(location => {
@@ -18,9 +19,8 @@ const setAllLocations = input => {
   setTimesOfDay();
 };
 
-const getExs = () => {
-
-};
+const getExs = () => exs;
+const setExs = input => { exs = input };
 
 const setMegasmash = (locations) => {
   megaSmashed = locations;
