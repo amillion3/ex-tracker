@@ -62,6 +62,14 @@ const printLocations = input => {
 // End Print Location Stuff
 
 // Print single ex-view-----------------------
+// const buildBackButton = () => {
+//   const output = `
+//   <div class='single-ex-view-back row'>
+//     <h2>< Back</h2>
+//   </div>`;
+//   return output;
+// };
+
 const buildExProfile = ex => {
   const output = `
     <div class="row">
@@ -92,7 +100,7 @@ const buildLocationDomString = locationObject => {
             <h3>${location.name}</h3>
             <p>${location.address}</p>
             <p>Time of Day: ${location.timeOfDay}</p>
-            <p><a href="#" class="btn btn-primary" role="button">Google Maps</a></p>
+            <p><a href="https://www.google.com/maps/place/${location.address}" target="_blank" class="btn btn-primary" role="button">Google Maps</a></p>
           </div>
         </div>
       </div>
@@ -102,12 +110,9 @@ const buildLocationDomString = locationObject => {
 };
 
 const setupSingleExView = (exLadyObject, locationArray) => {
-  const exProfileDomString = buildExProfile(exLadyObject);
+  // const exProfileDomString = buildExProfile(exLadyObject);
   const exLocationDomString = buildLocationDomString(locationArray);
-  console.log(exLadyObject);
-  console.log(locationArray);
-  console.log(exProfileDomString);
-  console.log(exLocationDomString);
+  // $('#single-ex-view').html(buildBackButton());
   $('#single-ex-profile').html(buildExProfile(exLadyObject));
   $('#single-ex-locations').html($(exLocationDomString));
 };
