@@ -2,7 +2,6 @@
 
 // Begin Print Ex Stuff
 const flaws = input => {
-  console.log('flaws', input);
   let flawsOutput = '';
   const flawsArray = input.flaws;
   flawsArray.forEach((flaw) => {
@@ -82,7 +81,7 @@ const buildExProfile = ex => {
 };
 
 const buildLocationDomString = locationObject => {
-  const output = '';
+  let output = '';
   locationObject.forEach(location => {
     output += `
     <div class="row">
