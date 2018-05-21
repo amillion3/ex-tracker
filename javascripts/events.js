@@ -6,9 +6,9 @@ const dom = require ('./dom');
 const clearDOMAllExsLocations = () => {
   $('#all-exs-locations').html('');
 };
-const clearSingleExView = () => {
-  $('#single-ex-view').html('');
-};
+// const clearSingleExView = () => {
+//   $('#single-ex-view').html('');
+// };
 // END Clear/Show DOM for single ex view
 
 const printMatches = matches => {
@@ -77,12 +77,10 @@ const findTimeMatches = (input) => {
     alert('No matches found, please try your query again.');
   }
 };
-
 const btnTimeClicked = e => {
   const timeButton = $(e.target).closest('.btn-timing').text();
   findTimeMatches(timeButton); // this needs the event passed to it still
 };
-
 // END Time of Days button functionality -----------------
 
 // Ex-clicked
@@ -111,9 +109,10 @@ const btnPanelClicked = e => {
   const exLady = getSingleExObject(buttonClicked);
   let locations = [];
   locations = findExMatches(exLady.name);
-  clearDOMAllExsLocations();
+  // clearDOMAllExsLocations();
+  console.log(clearDOMAllExsLocations());
   dom.setupSingleExView(exLady, locations);
-  console.log('ignore', clearSingleExView());
+  // console.log('ignore', clearSingleExView());
   // TO DO gather the ex-id and call a function to retrieve their info
 };
 // END Ex-clicked

@@ -84,14 +84,14 @@ const buildLocationDomString = locationObject => {
   let output = '';
   locationObject.forEach(location => {
     output += `
-    <div class="row">
+    <div class="">
       <div class="col-sm-4">
         <div class="thumbnail">
           <img src="${location.imageUrl}" alt="Photo of ${location.name}">
           <div class="caption">
             <h3>${location.name}</h3>
             <p>${location.address}</p>
-            <p>${location.timeOfDay}</p>
+            <p>Time of Day: ${location.timeOfDay}</p>
             <p><a href="#" class="btn btn-primary" role="button">Google Maps</a></p>
           </div>
         </div>
@@ -101,11 +101,15 @@ const buildLocationDomString = locationObject => {
   return output;
 };
 
-const setupSingleExView = (exLadyObject, locationObjects) => {
+const setupSingleExView = (exLadyObject, locationArray) => {
   const exProfileDomString = buildExProfile(exLadyObject);
-  const exLocationDomString = buildLocationDomString(locationObjects);
-  $('#single-ex-profile').html(exProfileDomString);
-  $('#single-ex-locations').html(exLocationDomString);
+  const exLocationDomString = buildLocationDomString(locationArray);
+  console.log(exLadyObject);
+  console.log(locationArray);
+  console.log(exProfileDomString);
+  console.log(exLocationDomString);
+  $('#single-ex-profile').html(buildExProfile(exLadyObject));
+  $('#single-ex-locations').html($(exLocationDomString));
 };
 
 // END print single ex-view
