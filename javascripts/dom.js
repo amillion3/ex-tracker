@@ -62,13 +62,15 @@ const printLocations = input => {
 // End Print Location Stuff
 
 // Print single ex-view-----------------------
-// const buildBackButton = () => {
-//   const output = `
-//   <div class='single-ex-view-back row'>
-//     <h2>< Back</h2>
-//   </div>`;
-//   return output;
-// };
+const buildBackButton = () => {
+  const output = `
+  <div class='single-ex-view-back row'>
+    <div class='col-sm-offset-2'>
+      <button id ='go-back'>< Go Back</button>
+    </div>
+  </div>`;
+  return output;
+};
 
 const buildExProfile = ex => {
   const output = `
@@ -110,9 +112,8 @@ const buildLocationDomString = locationObject => {
 };
 
 const setupSingleExView = (exLadyObject, locationArray) => {
-  // const exProfileDomString = buildExProfile(exLadyObject);
   const exLocationDomString = buildLocationDomString(locationArray);
-  // $('#single-ex-view').html(buildBackButton());
+  $('#single-ex-view').prepend(buildBackButton());
   $('#single-ex-profile').html(buildExProfile(exLadyObject));
   $('#single-ex-locations').html($(exLocationDomString));
 };

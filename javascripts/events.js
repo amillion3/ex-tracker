@@ -6,9 +6,9 @@ const dom = require ('./dom');
 const clearDOMAllExsLocations = () => {
   $('#all-exs-locations').html('');
 };
-// const clearSingleExView = () => {
-//   $('#single-ex-view').html('');
-// };
+const clearSingleExView = () => {
+  $('#single-ex-view').html('');
+};
 // END Clear/Show DOM for single ex view
 
 const printMatches = matches => {
@@ -21,6 +21,14 @@ const clearDomOfCards = matches => {
   printMatches(matches);
   $('[data-toggle="popover"]').popover();
 };
+
+const btnBackClicked = () => {
+  clearSingleExView();
+  dom.printExDetails(dataGateKeeper.getExs());
+  dom.printLocations(dataGateKeeper.returnAllLocations());
+
+};
+
 // Submit button functionality -----------------
 const findSearchMatches = outputArray => {
   const allLocations = dataGateKeeper.returnAllLocations();
@@ -91,7 +99,6 @@ const findExMatches = exNameClicked => {
   });
   return matchingLocations;
 };
-
 const getSingleExObject = exName => {
   const allExs = dataGateKeeper.getExs();
   const match = [];
@@ -102,18 +109,14 @@ const getSingleExObject = exName => {
   });
   return match[0];
 };
-
 const btnPanelClicked = e => {
   const buttonClicked = $(e.target).closest('.panel')[0].id;
   // gets a single ex object that matches the btn click
   const exLady = getSingleExObject(buttonClicked);
   let locations = [];
   locations = findExMatches(exLady.name);
-  // clearDOMAllExsLocations();
-  console.log(clearDOMAllExsLocations());
+  clearDOMAllExsLocations();
   dom.setupSingleExView(exLady, locations);
-  // console.log('ignore', clearSingleExView());
-  // TO DO gather the ex-id and call a function to retrieve their info
 };
 // END Ex-clicked
 
@@ -121,6 +124,7 @@ const bindEvents = () => {
   $('.btn-submit').on('click', btnSubmitClicked);
   $('#buttons').on('click', '.btn-timing', btnTimeClicked);
   $('#ex-details').on('click', '.panel-default', btnPanelClicked);
+  $('.col-sm-offset-2').on('click', '#go-back', btnBackClicked);
 };
 
 module.exports = bindEvents;
