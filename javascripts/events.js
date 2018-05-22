@@ -23,10 +23,12 @@ const clearDomOfCards = matches => {
 };
 
 const btnBackClicked = () => {
+  console.log('you clicked me');
   clearSingleExView();
-  dom.printExDetails(dataGateKeeper.getExs());
-  dom.printLocations(dataGateKeeper.returnAllLocations());
-
+  // do jquery
+  const allLocations = dom.printLocations(dataGateKeeper.returnAllLocations());
+  const allExs = dom.printExDetails(dataGateKeeper.getExs());
+  dom.displayAllExsAndLocations(allLocations, allExs);
 };
 
 // Submit button functionality -----------------
@@ -124,7 +126,7 @@ const bindEvents = () => {
   $('.btn-submit').on('click', btnSubmitClicked);
   $('#buttons').on('click', '.btn-timing', btnTimeClicked);
   $('#ex-details').on('click', '.panel-default', btnPanelClicked);
-  $('.col-sm-offset-2').on('click', '#go-back', btnBackClicked);
+  $(document).on('click', '#go-back', btnBackClicked);
 };
 
 module.exports = bindEvents;

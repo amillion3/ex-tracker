@@ -10,7 +10,8 @@ const flaws = input => {
   return flawsOutput.slice(0, -2); // removes trailing comma and space
 };
 
-const printExDetails = exs => {
+const printExDetails = input => {
+  const exs = input;
   let output = '';
   exs.forEach(ex => {
     const flawsDom = flaws(ex);
@@ -59,6 +60,12 @@ const printLocations = input => {
   });
   return output;
 };
+const displayAllExsAndLocations = (allLocations, allExs) => {
+  $('#ex-details').html($(allExs));
+  $('#cards-container').html($(allLocations));
+  console.log(allExs);
+  console.log(allLocations);
+};
 // End Print Location Stuff
 
 // Print single ex-view-----------------------
@@ -79,7 +86,7 @@ const buildExProfile = ex => {
         <div class="thumbnail">
           <img src="${ex.imageUrl}" alt="Photo of ${ex.name}">
           <div class="caption">
-            <h3>${ex.name}</h3>
+            <h3 class='text-center'>${ex.name}</h3>
             <p>${ex.age} years old</p>
             <p>Flaws: ${flaws(ex)}</p>
             <p><a href="#" class="btn btn-primary" role="button">Go back</a></p>
@@ -99,7 +106,7 @@ const buildLocationDomString = locationObject => {
         <div class="thumbnail">
           <img src="${location.imageUrl}" alt="Photo of ${location.name}">
           <div class="caption">
-            <h3>${location.name}</h3>
+            <h3 class='text-center'>${location.name}</h3>
             <p>${location.address}</p>
             <p>Time of Day: ${location.timeOfDay}</p>
             <p><a href="https://www.google.com/maps/place/${location.address}" target="_blank" class="btn btn-primary" role="button">Google Maps</a></p>
@@ -124,4 +131,5 @@ module.exports = {
   printExDetails,
   printLocations,
   setupSingleExView,
+  displayAllExsAndLocations,
 };
