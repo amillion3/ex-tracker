@@ -1,6 +1,6 @@
 # Ex-Tracker
 
-## This app is used to track an 'ex' of mine. The user is able to search for names or addresses (such as 'Chic-Fil-A' or '6500 Charlotte Pike') via a search box. The user can also filter by the time of day my ex usually frequents those locations. Using jQuery over vanilla JavaScript, the functionality is basic, but important.
+## This app is used to track my 'exs'. The user is able to search for names or addresses (such as 'Chic-Fil-A' or '6500 Charlotte Pike') via a search box. The user can also filter by the time of day my ex usually frequents those locations. Using jQuery over vanilla JavaScript, the functionality is basic, but important.
 
 ## Technology
 - HTML5
@@ -28,6 +28,12 @@ ___
 In this screenshot, the user has filtered by time of day, selecting the Morning button. The 4 cards shown are all locations my ex frequents in the morning.
 
 ![Time of day filtering](https://raw.githubusercontent.com/amillion3/ex-tracker/master/images/screenshots/button-time.png)
+___
+
+
+Here, the user has clicked on one of my exs profiles. This will clear the screen and show all the locations/times my ex goes there. There is a back button for the user to return to the main page.
+
+![Time of day filtering](https://raw.githubusercontent.com/amillion3/ex-tracker/master/images/screenshots/clicked-ex.png)
 ___
 
 ## Running The Project
