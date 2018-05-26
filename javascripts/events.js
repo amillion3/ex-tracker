@@ -4,10 +4,12 @@ const dom = require ('./dom');
 
 // Clear/Show DOM for single ex view
 const clearDOMAllExsLocations = () => {
-  $('#all-exs-locations').html('');
+  $('#all-exs-locations').hide();
+  $('#single-ex-view').show();
 };
 const clearSingleExView = () => {
-  $('#single-ex-view').html('');
+  $('#all-exs-locations').show();
+  $('#single-ex-view').hide();
 };
 // END Clear/Show DOM for single ex view
 
@@ -23,7 +25,6 @@ const clearDomOfCards = matches => {
 };
 
 const btnBackClicked = () => {
-  console.log('you clicked me');
   clearSingleExView();
   // do jquery
   const allLocations = dom.printLocations(dataGateKeeper.returnAllLocations());

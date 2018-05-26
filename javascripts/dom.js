@@ -71,29 +71,28 @@ const displayAllExsAndLocations = (allLocations, allExs) => {
 // Print single ex-view-----------------------
 const buildBackButton = () => {
   const output = `
-  <div class='single-ex-view-back row'>
-    <div class='col-sm-offset-2'>
-      <button id ='go-back'>< Go Back</button>
-    </div>
+  <div class='single-ex-view-back text-center col-sm-3' id='container-back-button'>
+      <button class ='button-lg btn-danger' id ='go-back'>< Go Back</button>
   </div>`;
+  // const output = `
+  // <div class='single-ex-view-back text-center'>
+  //   <div class='col-sm-3'>
+  //     <button class ='button-lg btn-danger' id ='go-back'>< Go Back</button>
+  //   </div>
+  // </div>`;
   return output;
 };
 
 const buildExProfile = ex => {
   const output = `
-    <div class="row">
-      <div class="col-sm-12">
         <div class="thumbnail">
           <img src="${ex.imageUrl}" alt="Photo of ${ex.name}">
           <div class="caption">
             <h3 class='text-center'>${ex.name}</h3>
             <p>${ex.age} years old</p>
             <p>Flaws: ${flaws(ex)}</p>
-            <p><a href="#" class="btn btn-primary" role="button">Go back</a></p>
           </div>
-        </div>
-      </div>
-    </div>`;
+        </div>`;
   return output;
 };
 
@@ -102,7 +101,7 @@ const buildLocationDomString = locationObject => {
   locationObject.forEach(location => {
     output += `
     <div class="">
-      <div class="col-sm-4">
+      <div class="col-sm-4 single-ex-card-location">
         <div class="thumbnail">
           <img src="${location.imageUrl}" alt="Photo of ${location.name}">
           <div class="caption">
@@ -119,6 +118,7 @@ const buildLocationDomString = locationObject => {
 };
 
 const setupSingleExView = (exLadyObject, locationArray) => {
+  // $('#single-ex-view').html('');
   const exLocationDomString = buildLocationDomString(locationArray);
   $('#single-ex-view').prepend(buildBackButton());
   $('#single-ex-profile').html(buildExProfile(exLadyObject));
