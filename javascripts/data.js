@@ -9,6 +9,7 @@ const getAllExs = () => {
   let allExs = [];
   return loadExData().then(exsArray => {
     allExs = exsArray;
+    dataGateKeeper.setExs(allExs);
     return Promise.resolve(allExs);
   });
 };
@@ -19,6 +20,7 @@ const getAllLocations = () => {
     allLocations = locationsArray;
     dataGateKeeper.setAllLocations(allLocations);
     return Promise.resolve(allLocations);
+    // return allLocations;
   });
 };
 
@@ -33,7 +35,7 @@ const megaSmash = (locations, exs) => {
       });
     });
   });
-  dataGateKeeper.setMegasmash(locations);
+  // dataGateKeeper.setMegasmash(locations);
   return [locations, exs,];
 };
 
@@ -58,18 +60,14 @@ const getAllJSONs = () => {
     }).then(result3 => {
       successPrintLocations(result3[0]);
       successPrintExs(result3[1]);
-      // what should go here?
-      // dataGateKeeper.setMegasmash(locations, exs);
     });
 };
 
 const initializer = () => {
   bindEvents();
   getAllJSONs();
-  // ORIGINAL CODE BELOW
-  // loadExData(successLoadEx, fail);
-  // loadLocations(successLoadLocations, fail);
-
 };
 
-module.exports = initializer;
+module.exports = {
+  initializer,
+};

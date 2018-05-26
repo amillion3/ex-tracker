@@ -1,6 +1,7 @@
-let megaSmashed = [];
+// let megaSmashed = [];
 let locations = [];
 let timesOfDay = [];
+let exs = [];
 
 const setTimesOfDay = () => {
   locations.forEach(location => {
@@ -18,19 +19,20 @@ const setAllLocations = input => {
   setTimesOfDay();
 };
 
-const getExs = () => {
-
+const getExs = () => exs;
+const setExs = input => {
+  exs = input;
 };
 
-const setMegasmash = (locations) => {
-  megaSmashed = locations;
-  console.log('datagatekeeper', megaSmashed);
-};
+// const setMegasmash = (locations) => {
+//   megaSmashed = locations;
+//   console.log('datagatekeeper', megaSmashed);
+// };
 
 module.exports = {
   setAllLocations,
   returnAllLocations,
   returnTimesOfDay,
   getExs,
-  setMegasmash,
+  setExs,
 };

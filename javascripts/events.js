@@ -2,6 +2,17 @@
 const dataGateKeeper = require('./dataGatekeeper');
 const dom = require ('./dom');
 
+// Clear/Show DOM for single ex view
+const clearDOMAllExsLocations = () => {
+  $('#all-exs-locations').hide();
+  $('#single-ex-view').show();
+};
+const clearSingleExView = () => {
+  $('#all-exs-locations').show();
+  $('#single-ex-view').hide();
+};
+// END Clear/Show DOM for single ex view
+
 const printMatches = matches => {
   $('#cards-container').append(dom.printLocations(matches));
   $('[data-toggle="popover"]').popover();
@@ -12,6 +23,15 @@ const clearDomOfCards = matches => {
   printMatches(matches);
   $('[data-toggle="popover"]').popover();
 };
+
+const btnBackClicked = () => {
+  clearSingleExView();
+  // do jquery
+  const allLocations = dom.printLocations(dataGateKeeper.returnAllLocations());
+  const allExs = dom.printExDetails(dataGateKeeper.getExs());
+  dom.displayAllExsAndLocations(allLocations, allExs);
+};
+
 // Submit button functionality -----------------
 const findSearchMatches = outputArray => {
   const allLocations = dataGateKeeper.returnAllLocations();
@@ -28,7 +48,6 @@ const findSearchMatches = outputArray => {
         matchingLocations.push(location);
       } else if (formattedNamesArray.length > 0) {
         formattedNamesArray.forEach(nameFromArray => {
-          console.log(nameFromArray.toLowerCase());
           if (nameFromArray.toLowerCase().indexOf(formattedOutput) > -1) {
             matchingLocations.push(location);
           }
@@ -37,14 +56,16 @@ const findSearchMatches = outputArray => {
     });
   });
   if (matchingLocations.length > 0) {
-    clearDomOfCards([ ...new Set(matchingLocations),]);
+    return ([ ...new Set(matchingLocations),]);
+    // clearDomOfCards([ ...new Set(matchingLocations),]);
   } else {
     alert('No matches found, please try your query again.');
   }
 };
 const cleanAndValidate = submitButtonText => {
   const outputArray = submitButtonText.replace(/[^A-Za-z\s]/g, '').toLowerCase().split(' ');
-  findSearchMatches(outputArray);
+  const results = findSearchMatches(outputArray);
+  clearDomOfCards(results);
 };
 const btnSubmitClicked = () => {
   const submitButtonText = $('#user-input').val();
@@ -67,17 +88,46 @@ const findTimeMatches = (input) => {
     alert('No matches found, please try your query again.');
   }
 };
-
 const btnTimeClicked = e => {
   const timeButton = $(e.target).closest('.btn-timing').text();
   findTimeMatches(timeButton); // this needs the event passed to it still
 };
-
 // END Time of Days button functionality -----------------
+
+// Ex-clicked
+const findExMatches = exNameClicked => {
+  const allLocations = dataGateKeeper.returnAllLocations();
+  const matchingLocations = allLocations.filter(location => {
+    return location.names.includes(exNameClicked);
+  });
+  return matchingLocations;
+};
+const getSingleExObject = exName => {
+  const allExs = dataGateKeeper.getExs();
+  const match = [];
+  allExs.forEach(ex => {
+    if (ex.name === exName) {
+      match.push(ex);
+    }
+  });
+  return match[0];
+};
+const btnPanelClicked = e => {
+  const buttonClicked = $(e.target).closest('.panel')[0].id;
+  // gets a single ex object that matches the btn click
+  const exLady = getSingleExObject(buttonClicked);
+  let locations = [];
+  locations = findExMatches(exLady.name);
+  clearDOMAllExsLocations();
+  dom.setupSingleExView(exLady, locations);
+};
+// END Ex-clicked
 
 const bindEvents = () => {
   $('.btn-submit').on('click', btnSubmitClicked);
   $('#buttons').on('click', '.btn-timing', btnTimeClicked);
+  $('#ex-details').on('click', '.panel-default', btnPanelClicked);
+  $(document).on('click', '#go-back', btnBackClicked);
 };
 
 module.exports = bindEvents;
