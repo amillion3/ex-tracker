@@ -15,7 +15,7 @@ This the page after loading. You can see a photo of my 'ex' with some informatio
 ![On page load](https://raw.githubusercontent.com/amillion3/ex-tracker/master/images/screenshots/on-load.png)
 ___
 
-Detail of the location card. On the second card, you can see what the pop-up looks like.
+Detail of the location card. On the second card, you can see what the pop-up looks like. The pop-up also contains the exs that frequent these locations.
 
 ![alt text](https://raw.githubusercontent.com/amillion3/ex-tracker/master/images/screenshots/popover.png)
 ___
