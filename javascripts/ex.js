@@ -2,7 +2,7 @@
 
 const loadExData = () => {
   return new Promise ((resolve, reject) => {
-    $.get('../db/ex.json')
+    $.get('https://ex-tracker-4ddb9.firebaseio.com/ex.json')
       .done(data => {
         const exsArray = data.exs;
         resolve(exsArray);
@@ -12,19 +12,5 @@ const loadExData = () => {
       });
   });
 };
-
-// const firstFoodJSON = () => {
-//   return new Promise((resolve, reject) => {
-//     $.get('../db/food1.json')
-//       .done((data) => {
-//         const foodArray = data.food1;
-//         foodArray.map(food => food.key = 1);
-//         resolve(foodArray);
-//       })
-//       .fail((err) => {
-//         reject(`Oi got an error!`, err);
-//       });
-//   });
-// };
 
 module.exports = loadExData;

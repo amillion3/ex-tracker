@@ -24,11 +24,6 @@ const setExs = input => {
   exs = input;
 };
 
-// const setMegasmash = (locations) => {
-//   megaSmashed = locations;
-//   console.log('datagatekeeper', megaSmashed);
-// };
-
 module.exports = {
   setAllLocations,
   returnAllLocations,

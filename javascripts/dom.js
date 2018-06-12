@@ -63,8 +63,6 @@ const printLocations = input => {
 const displayAllExsAndLocations = (allLocations, allExs) => {
   $('#ex-details').html($(allExs));
   $('#cards-container').html($(allLocations));
-  console.log(allExs);
-  console.log(allLocations);
 };
 // End Print Location Stuff
 
@@ -74,12 +72,6 @@ const buildBackButton = () => {
   <div class='single-ex-view-back text-center col-sm-3' id='container-back-button'>
       <button class ='button-lg btn-danger' id ='go-back'>< Go Back</button>
   </div>`;
-  // const output = `
-  // <div class='single-ex-view-back text-center'>
-  //   <div class='col-sm-3'>
-  //     <button class ='button-lg btn-danger' id ='go-back'>< Go Back</button>
-  //   </div>
-  // </div>`;
   return output;
 };
 
@@ -118,7 +110,6 @@ const buildLocationDomString = locationObject => {
 };
 
 const setupSingleExView = (exLadyObject, locationArray) => {
-  // $('#single-ex-view').html('');
   const exLocationDomString = buildLocationDomString(locationArray);
   $('#single-ex-view').prepend(buildBackButton());
   $('#single-ex-profile').html(buildExProfile(exLadyObject));

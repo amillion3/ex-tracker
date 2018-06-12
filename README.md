@@ -1,5 +1,7 @@
 # Ex-Tracker
 
+## [Live Demo](https://ex-tracker-4ddb9.firebaseapp.com/)
+
 ## This app is used to track my 'exs'. The user is able to search for names or addresses (such as 'Chic-Fil-A' or '6500 Charlotte Pike') via a search box. The user can also filter by the time of day my ex usually frequents those locations. Using jQuery over vanilla JavaScript, the functionality is basic, but important.
 
 ## Technology
@@ -8,6 +10,7 @@
 - JavaScript/ES6
 - jQuery/Bootstrap
 - Node.JS/Grunt/Browserify
+- Firebase (database)
 
 ## Screenshots
 This the page after loading. You can see a photo of my 'ex' with some information about her. Below, there are cards showing locations my ex frequents. If you click on the 'details' button, the name, address and a link to the location on Google maps pops up. At the bottom of the screen is a fixed-footer that allows the user to search by time of day or by a specific search term.
