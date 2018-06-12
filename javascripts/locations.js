@@ -2,7 +2,7 @@
 
 const loadLocations = () => {
   return new Promise ((resolve, reject) => {
-    $.get('../db/locations.json')
+    $.get('https://ex-tracker-4ddb9.firebaseio.com/locations.json')
       .done(data => {
         const locationsArray = data.locations;
         resolve(locationsArray);

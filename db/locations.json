@@ -5,98 +5,98 @@
       "id": 1,
       "address": "2603 West End Ave, Nashville, TN 37203",
       "timeOfDay": "After Dark",
-      "imageUrl": "../images/wendys-new-logo-sm-400x300.jpg"
+      "imageUrl": "https://www.andymillion.com/ex-tracker/images/wendys-new-logo-sm-400x300.jpg"
     },
     {
       "name": "McDonald's",
       "id": 2,
       "address": "2212 Nolensville Pike, Nashville, TN 37211",
       "timeOfDay": "Afternoon",
-      "imageUrl": "../images/mcdonalds_sign.png"
+      "imageUrl": "https://www.andymillion.com/ex-tracker/images/mcdonalds_sign.png"
     },
     {
       "name": "Burger King",
       "id": 3,
       "address": "454 Murfreesboro Pike, Nashville, TN 37210",
       "timeOfDay": "Morning",
-      "imageUrl": "../images/honestslogans_burgerking_dribbble_1x.jpg"
+      "imageUrl": "https://www.andymillion.com/ex-tracker/images/honestslogans_burgerking_dribbble_1x.jpg"
     },
     {
       "name": "Chic-Fil-A",
       "id": 4,
       "address": "6500 Charlotte Pike, Nashville, TN 37209",
       "timeOfDay": "Morning",
-      "imageUrl": "../images/cfa_1x.png"
+      "imageUrl": "https://www.andymillion.com/ex-tracker/images/cfa_1x.png"
     },
     {
       "name": "KFC",
       "id": 5,
       "address": "1027 8th Ave N, Nashville, TN 37208",
       "timeOfDay": "Afternoon",
-      "imageUrl": "../images/finger-lickin.jpg"
+      "imageUrl": "https://www.andymillion.com/ex-tracker/images/finger-lickin.jpg"
     },
     {
       "name": "Taco Bell",
       "id": 6,
       "address": "2101 Rosa L Parks Blvd, Nashville, TN 37228",
       "timeOfDay": "After Dark",
-      "imageUrl": "../images/honestslogans_tacobell_dribbble.png"
+      "imageUrl": "https://www.andymillion.com/ex-tracker/images/honestslogans_tacobell_dribbble.png"
     },
     {
       "name": "Pizza Hut",
       "id": 7,
       "address": "1908 West End Ave, Nashville, TN 37203",
       "timeOfDay": "Evening",
-      "imageUrl": "../images/pizzahut.jpg"
+      "imageUrl": "https://www.andymillion.com/ex-tracker/images/pizzahut.jpg"
     },
     {
       "name": "Subway",
       "id": 8,
       "address": "353 Murfreesboro Pike, Nashville, TN 37210",
       "timeOfDay": "Morning",
-      "imageUrl": "../images/subway.png"
+      "imageUrl": "https://www.andymillion.com/ex-tracker/images/subway.png"
     },
     {
       "name": "Jimmy John's",
       "id": 9,
       "address": "424 Church St #102, Nashville, TN 37219",
       "timeOfDay": "Afternoon",
-      "imageUrl": "../images/jimmy-johns-400x300.jpg"
+      "imageUrl": "https://www.andymillion.com/ex-tracker/images/jimmy-johns-400x300.jpg"
     },
     {
       "name": "Waffle House",
       "id": 10,
       "address": "816 Murfreesboro Pike, Nashville, TN 37217",
       "timeOfDay": "After Dark",
-      "imageUrl": "../images/37dba7417bfcd5b825763a31d3a225d8.jpg"
+      "imageUrl": "https://www.andymillion.com/ex-tracker/images/37dba7417bfcd5b825763a31d3a225d8.jpg"
     },
     {
       "name": "Bojangles",
       "id": 11,
       "address": "7000 A Charlotte Pike, Nashville, TN 37209",
       "timeOfDay": "Evening",
-      "imageUrl": "../images/BoOvalLogo-400x300.jpg"
+      "imageUrl": "https://www.andymillion.com/ex-tracker/images/BoOvalLogo-400x300.jpg"
     },
     {
       "name": "Hardees",
       "id": 12,
       "address": "1000 Acorn Dr, Nashville, TN 37210",
       "timeOfDay": "Morning",
-      "imageUrl": "../images/HardeesSignage.jpg"
+      "imageUrl": "https://www.andymillion.com/ex-tracker/images/HardeesSignage.jpg"
     },
     {
       "name": "Sonic",
       "id": 13,
       "address": "444 Murfreesboro Pike, Nashville, TN 37210",
       "timeOfDay": "Afternoon",
-      "imageUrl": "../images/sonic.jpg"
+      "imageUrl": "https://www.andymillion.com/ex-tracker/images/sonic.jpg"
     },
     {
       "name": "Fazoli's",
       "id": 14,
       "address": "10 Harding Mall Dr, Nashville, TN 37211",
       "timeOfDay": "After Dark",
-      "imageUrl": "../images/fazolis.jpg"
+      "imageUrl": "https://www.andymillion.com/ex-tracker/images/fazolis.jpg"
     }
   ]
 }
